@@ -1,7 +1,7 @@
 package main.java.com.homeparty.otus;
 
 /**
- * Created by Глеб on 03-Apr-17.
+ * Created by Gleb Skalatsky on 03-Apr-17.
  */
 public class Starter {
     public static void main(String[] args) {

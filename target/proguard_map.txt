@@ -1,3 +1,0 @@
-main.java.com.homeparty.otus.Starter -> main.java.com.homeparty.otus.Starter:
-    void <init>() -> <init>
-    void main(java.lang.String[]) -> main

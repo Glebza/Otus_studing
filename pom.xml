@@ -34,6 +34,10 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <formats>
+                        <format>jar</format>
+                    </formats>
+
                     <appendAssemblyId>false</appendAssemblyId>
                     <!-- MainClass in mainfest make a executable jar -->
                     <archive>
@@ -54,46 +58,7 @@
                 </executions>
             </plugin>
 
-            <plugin>
-                <groupId>com.github.wvengen</groupId>
-                <artifactId>proguard-maven-plugin</artifactId>
-                <version>2.0.10</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.sf.proguard</groupId>
-                        <artifactId>proguard-base</artifactId>
-                        <version>5.3</version>
-                        <scope>runtime</scope>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals><goal>proguard</goal></goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <obfuscate>true</obfuscate>
-                    <injar>OtusSkalUnit1-1.jar</injar>
-                    <!--<injar>${project.build.finalName}.jar</injar>-->
-                    <outjar>OtusSkalUnit1-1-small.jar</outjar>
-                    <includeDependency>true</includeDependency>
-                    <proguardVersion>4.10</proguardVersion>
-                    <options>
-                        <option>-keep public class main.java.com.homeparty.otus.Starter{*;}</option>
-                    </options>
-                    <libs>
-                        <lib>${java.home}/lib/rt.jar</lib>
-                        <lib>${java.home}/lib/jce.jar</lib>
-                    </libs>
-                    <archive>
-                        <manifest>
-                            <mainClass>Starter</mainClass>
-                            <packageName>main.java.com.homeparty.otus</packageName>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
+
 
         </plugins>
     </build>
